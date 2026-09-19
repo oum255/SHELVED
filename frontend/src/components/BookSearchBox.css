@@ -1,0 +1,89 @@
+.club-book-search {
+  margin-top: 0.6rem;
+}
+
+.club-book-search-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.club-book-search-form input {
+  flex: 1;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+
+.club-book-search-form button {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.club-book-results {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0.3rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.club-book-result {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem;
+}
+
+.club-book-result-cover {
+  width: 30px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 3px;
+  flex: none;
+}
+
+.club-book-result-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.club-book-result-title {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.club-book-result-author {
+  margin: 0.1rem 0 0;
+  font-size: var(--fs-2xs);
+  color: var(--muted);
+}
+
+.club-book-result button {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--primary);
+  background: none;
+  color: var(--primary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  cursor: pointer;
+  flex: none;
+}

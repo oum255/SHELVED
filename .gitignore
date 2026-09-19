@@ -1,0 +1,26 @@
+# === Backend (Python) ===
+# la "bulle" Python, se régénère depuis requirements.txt
+backend/venv/
+# fichiers temporaires de Python
+__pycache__/
+*.pyc
+# la base SQLite locale (données de test, pas de code)
+backend/*.db
+# secrets (clés API, mots de passe) — JAMAIS sur Git
+.env
+# fichiers temporaires de pytest
+backend/.pytest_cache/
+
+# === Frontend (Node) ===
+# les librairies JS, se régénèrent depuis package.json
+frontend/node_modules/
+# version compilée pour la prod
+frontend/dist/
+
+# === Système ===
+# fichier caché créé par macOS
+.DS_Store
+
+# === Outils locaux ===
+# préférences de Claude Code propres à cette machine, pas au projet
+.claude/settings.local.json

@@ -1,0 +1,171 @@
+.club-detail-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.club-detail-content {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 3rem;
+}
+
+.club-back {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: var(--fs-base);
+}
+
+.club-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0 1.6rem;
+}
+
+.club-name {
+  margin: 0;
+}
+
+.club-description {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: var(--fs-base);
+  max-width: 48ch;
+}
+
+.club-meta {
+  margin: 0.4rem 0 0;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+.club-header-actions {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.club-join-btn,
+.club-leave-btn,
+.club-delete-btn,
+.club-header-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.club-join-btn {
+  border: none;
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.club-leave-btn,
+.club-delete-btn,
+.club-header-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.club-delete-btn {
+  border-color: var(--danger, #c0392b);
+  color: var(--danger, #c0392b);
+}
+
+.club-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.club-section-title {
+  margin: 0 0 0.7rem;
+  font-size: var(--fs-lg);
+}
+
+.club-current-book {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.club-current-book-cover {
+  width: 48px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex: none;
+}
+
+.club-current-book-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.club-current-book-author {
+  margin: 0.15rem 0 0;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.club-messages {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  /* ~10 messages visibles avant de défiler (évite de pousser le reste de la page). */
+  max-height: 17rem;
+  overflow-y: auto;
+}
+
+.club-message {
+  font-size: var(--fs-sm);
+  display: flex;
+  gap: 0.4rem;
+}
+
+.club-message-username {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  flex: none;
+}
+
+.club-message-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.club-message-form input {
+  flex: 1;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+
+.club-message-form button {
+  padding: 0.45rem 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+

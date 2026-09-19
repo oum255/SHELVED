@@ -1,0 +1,364 @@
+.stats {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.stats-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.stats-title {
+  margin: 0.5rem 0 1.5rem;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: var(--fs-sm);
+  opacity: 0.75;
+}
+
+/* Cartes cliquables (terminés / en cours) */
+.stat-card--clickable {
+  cursor: pointer;
+  font: inherit;
+  color: inherit; /* sinon le bouton force le texte en noir (invisible en thème sombre) */
+  transition: border-color 0.15s ease;
+}
+
+.stat-card--clickable:hover {
+  border-color: var(--primary);
+}
+
+.stat-card--active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+/* État vide : explication + CTA plutôt qu'un simple texte gris */
+.stats-empty {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  max-width: 420px;
+  margin: 0.5rem auto 0;
+}
+
+.stats-empty-title {
+  margin: 0 0 0.5rem;
+  font-size: var(--fs-xl);
+}
+
+.stats-empty-text {
+  margin: 0 0 1.3rem;
+  color: var(--muted);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+}
+
+.stats-empty-cta {
+  display: inline-block;
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--on-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--fs-base);
+  transition: opacity 0.15s ease;
+}
+
+.stats-empty-cta:hover {
+  opacity: 0.85;
+}
+
+/* Liste de livres dépliée sous les cartes */
+.stats-book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0 0 1.5rem;
+}
+
+.stats-book-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  text-decoration: none;
+  color: inherit;
+}
+
+.stats-book-item:hover {
+  border-color: var(--primary);
+}
+
+.stats-book-cover {
+  width: 44px;
+  height: 66px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex: 0 0 auto;
+  background: var(--surface-2);
+}
+
+.stats-book-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stats-book-title {
+  font-weight: 500;
+}
+
+.stats-book-author {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
+.stats-section-title {
+  font-size: var(--fs-xl);
+  font-weight: 500;
+  margin: 2rem 0 1rem;
+}
+
+.chart-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 0.5rem 0.5rem;
+}
+
+.muted {
+  opacity: 0.6;
+  font-size: var(--fs-md);
+}
+
+.mood-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 320px;
+}
+
+/* Humeur cliquable (bouton plein largeur) */
+.mood-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font: inherit;
+  font-size: var(--fs-md);
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.mood-item:hover {
+  border-color: var(--primary);
+}
+
+.mood-item.active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
+}
+
+.mood-count {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.mood-sessions {
+  max-width: 480px;
+  margin-top: 0.8rem;
+}
+
+/* ===== Calendrier de lecture ===== */
+.calendar-arrow {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: var(--fs-xl);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.calendar-arrow:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.calendar-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Résumé de l'année */
+.cal-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.cal-summary-item {
+  flex: 1 1 120px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: center;
+  text-align: center;
+}
+
+.cal-summary-value {
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.cal-summary-label {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+
+/* Un mois en grand */
+.cal-month-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.2rem 1.3rem;
+  max-width: 460px;
+}
+
+.cal-month-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.cal-month-title {
+  font-weight: 600;
+  font-size: var(--fs-xl);
+  text-transform: capitalize;
+}
+
+.cal-weekdays-lg,
+.cal-grid-lg {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cal-weekdays-lg {
+  margin-bottom: 4px;
+}
+
+.cal-weekdays-lg span {
+  text-align: center;
+  font-size: var(--fs-3xs);
+  color: var(--muted);
+  text-transform: capitalize;
+}
+
+.cal-day-lg {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  border-radius: 8px;
+  /* Seuls les jours lus sont de vrais <button> ; les règles ci-dessous ne visent qu'eux */
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.cal-day-lg.blank {
+  visibility: hidden;
+}
+
+.cal-day-lg.read {
+  cursor: pointer;
+}
+
+.cal-day-lg.read.active {
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+/* Élément séparé pour que l'opacité (intensité) ne touche que le fond, pas le texte */
+.cal-day-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--primary);
+  border-radius: 8px;
+}
+
+.cal-day-num {
+  position: relative;
+}
+
+.cal-day-lg.read .cal-day-num {
+  color: var(--on-primary);
+  font-weight: 700;
+}
+
+.day-sessions {
+  max-width: 480px;
+  margin-top: 1rem;
+}
+
+.day-sessions-title {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+  text-transform: capitalize;
+}

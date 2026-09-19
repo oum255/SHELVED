@@ -1,0 +1,211 @@
+.settings {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.settings-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem;
+}
+
+.settings-title {
+  margin: 0 0 1.5rem;
+}
+
+.settings-label {
+  color: var(--muted);
+}
+
+/* Ligne + bouton "Modifier" qui déplie un formulaire, protégé par le mot de passe actuel */
+.settings-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.settings-section-title {
+  margin: 0 0 0.4rem;
+  font-size: var(--fs-xl);
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+}
+
+.settings-row + .settings-row {
+  border-top: 1px solid var(--border);
+}
+
+.settings-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.settings-link-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  flex: none;
+}
+
+.settings-link-btn:hover {
+  text-decoration: underline;
+}
+
+.settings-cooldown-notice {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  text-align: right;
+  flex: none;
+  max-width: 14rem;
+}
+
+.settings-unverified-tag {
+  font-size: var(--fs-3xs);
+  color: var(--error-text);
+  background: var(--error-bg);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  width: fit-content;
+}
+
+.settings-inline-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.7rem 0;
+  border-top: 1px dashed var(--border);
+}
+
+.settings-inline-form input {
+  flex: 1;
+  min-width: 160px;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--fs-base);
+}
+
+.settings-save-btn {
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.settings-save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.settings-saved-notice {
+  color: var(--primary);
+  font-size: var(--fs-sm);
+  margin: 0.4rem 0 0;
+}
+
+/* Liens légaux (confidentialité, CGU) */
+.settings-links {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.settings-link {
+  color: var(--muted);
+  text-decoration: underline;
+  font-size: var(--fs-base);
+}
+
+/* Zone dangereuse : bordure rouge pour bien signaler le risque */
+.settings-danger {
+  border: 1px solid #c0392b;
+  border-radius: 10px;
+  padding: 1.2rem;
+  background: rgba(192, 57, 43, 0.06);
+}
+
+.settings-danger-title {
+  margin: 0 0 0.5rem;
+  color: #c0392b;
+  font-size: var(--fs-xl);
+}
+
+.settings-danger-text {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: var(--fs-base);
+  line-height: 1.4;
+}
+
+.settings-delete-btn {
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  font-size: var(--fs-md);
+}
+
+.settings-delete-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.settings-confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.settings-confirm-prompt {
+  font-size: var(--fs-base);
+}
+
+.settings-confirm-input {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.settings-confirm-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+}
+
+.settings-cancel-btn {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+}
+
+.settings-error {
+  color: #c0392b;
+  font-size: var(--fs-sm);
+  margin: 0;
+}

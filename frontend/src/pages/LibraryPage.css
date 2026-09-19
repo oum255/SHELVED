@@ -1,0 +1,354 @@
+.library {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.library-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.library-title {
+  margin: 0.5rem 0 1.5rem;
+}
+
+/* Panneau "Demander à l'IA" */
+.ai-panel {
+  background: var(--primary-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.ai-panel-title {
+  margin: 0 0 0.8rem;
+  font-size: var(--fs-xl);
+  font-weight: 600;
+}
+
+.ai-panel-spark {
+  color: var(--primary);
+  margin-right: 0.2rem;
+}
+
+/* Étiquettes-exemples cliquables */
+.ai-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.ai-chip {
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+
+.ai-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.ai-chip:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Barre "Demander à l'IA" */
+.ai-ask {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.ai-ask input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-md);
+}
+
+.ai-ask input:focus {
+  border-color: var(--primary);
+}
+
+.ai-ask button {
+  padding: 0.7rem 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ai-ask button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: var(--fs-lg);
+}
+
+.search-bar input:focus {
+  border-color: var(--primary);
+}
+
+.search-bar button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-bar button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.scan-btn {
+  background: var(--surface-2) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  white-space: nowrap;
+}
+
+.scan-btn:hover {
+  border-color: var(--primary) !important;
+}
+
+.library-error {
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  color: var(--error-text);
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  font-size: var(--fs-base);
+}
+
+.section-title {
+  font-size: var(--fs-xl);
+  font-weight: 500;
+  margin: 2rem 0 1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+/* En-tête de section avec un bouton à droite (effacer / régénérer) */
+.section-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0 1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.section-row .section-title {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.clear-btn {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.clear-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.clear-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reco-guest {
+  margin-top: 1.5rem;
+}
+
+/* Liste de recommandations (cartes texte, cliquables) */
+.reco-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reco-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+}
+
+/* Vignette de couverture du livre suggéré */
+.reco-cover {
+  width: 56px;
+  height: 84px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--surface-2);
+}
+
+/* Le texte (titre, auteur, raison) à droite de la vignette */
+.reco-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.reco-card:hover {
+  border-color: var(--primary);
+}
+
+.reco-card:hover .reco-book-title {
+  color: var(--primary);
+}
+
+.reco-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.reco-book-title {
+  margin: 0;
+  font-size: var(--fs-xl);
+  font-weight: 600;
+}
+
+.reco-book-author {
+  margin: 0.15rem 0 0;
+  opacity: 0.7;
+  font-size: var(--fs-base);
+}
+
+.reco-match {
+  flex-shrink: 0;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.reco-reason {
+  margin: 0.7rem 0 0;
+  line-height: 1.5;
+  font-size: var(--fs-md);
+}
+
+.reco-why {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.muted {
+  opacity: 0.6;
+  font-size: var(--fs-md);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+}
+
+.book-clickable {
+  cursor: pointer;
+}
+
+.book-clickable:hover {
+  border-color: var(--primary);
+}
+
+.book-clickable:hover .book-title {
+  color: var(--primary);
+}
+
+.book-info {
+  flex: 1;
+}
+
+.book-cover {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--surface-2);
+}
+
+.book-title {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  margin: 0 0 0.2rem;
+  line-height: 1.2;
+}
+
+.book-author {
+  font-size: var(--fs-xs);
+  opacity: 0.7;
+  margin: 0;
+}
+

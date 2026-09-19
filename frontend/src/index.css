@@ -1,0 +1,217 @@
+/* Reset minimal + thèmes de SHELVED : chaque couleur est une variable, changée
+   via data-theme="..." sur la page (voir ThemeContext.jsx). */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  overflow-x: hidden;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+
+/* Commun à tous les boutons : transitions douces sur les états définis par
+   chaque page (".active", ":hover"...) et un léger retour visuel au clic. */
+button {
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease,
+    transform 0.1s ease;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* Anneau de focus cohérent sur toute l'app, dans la couleur d'accent du thème.
+   S'ajoute par-dessus les composants qui stylisent déjà leur propre focus. */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Respecte la préférence système "réduire les animations". */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Sélecteurs langue/thème : flèche personnalisée, coins arrondis. */
+.lang-switcher {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-size: var(--fs-base);
+  font-family: inherit;
+  cursor: pointer;
+  /* Flèche "v" en SVG, gris neutre lisible clair/sombre. */
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23999' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 0.7rem;
+  transition: border-color 0.15s ease;
+}
+
+.lang-switcher:hover,
+.lang-switcher:focus-visible {
+  border-color: var(--primary);
+}
+
+/* Échelle typographique commune à tout le site : quelques paliers fixes plutôt
+   qu'une taille choisie à l'œil à chaque fois, pour une hiérarchie cohérente. */
+:root {
+  --fs-3xs: 0.7rem;
+  --fs-2xs: 0.75rem;
+  --fs-xs: 0.8rem;
+  --fs-sm: 0.85rem;
+  --fs-base: 0.9rem;
+  --fs-md: 0.95rem;
+  --fs-lg: 1rem;
+  --fs-xl: 1.1rem;
+  --fs-2xl: 1.3rem;
+  --fs-3xl: 1.6rem;
+}
+
+/* Couleurs constantes (identiques sur tous les thèmes) */
+:root {
+  --star: #e8b94d;
+  --error-bg: rgba(180, 70, 60, 0.15);
+  --error-border: rgba(180, 70, 60, 0.45);
+  --error-text: #d94848;
+}
+
+/* ===== Niche Corail (thème par défaut) =====
+   Seul thème sans planche en bois : BookshelfPage regarde --niche-* pour
+   dessiner une niche en terre cuite à la place. */
+:root,
+[data-theme='corail'] {
+  --bg: #e8c19c;
+  --surface: #f5ddc0;
+  --surface-2: #dcb488;
+  --border: #d4a878;
+  --text: #3a2415;
+  --muted: #6b4a30;
+  --primary: #9c4a32;
+  --on-primary: #fdf3e9;
+  --primary-soft: rgba(156, 74, 50, 0.14);
+
+  --shelf-page-bg: #e8c19c;
+  --shelf-text: #4a3220;
+
+  /* Fond derrière la niche */
+  --niche-scene-a: #f5e6d5;
+  --niche-scene-b: #e8cba8;
+  --niche-scene-c: #d9ab7a;
+  /* Liseré (cadre) */
+  --niche-trim-a: #b8865a;
+  --niche-trim-b: #8f6238;
+  /* Intérieur terre cuite */
+  --niche-fill-a: #a8523a;
+  --niche-fill-b: #8a3f2a;
+  --niche-fill-c: #602c1e;
+}
+
+/* ===== Coin lecture (étagère en bois) =====
+   Tons d'une veillée à la lampe : ambre chaud, lueur renforcée. Une lampe
+   décorative (BookshelfPage.jsx/.css, `.nook-lamp`) s'ajoute pour ce thème. */
+[data-theme='nook'] {
+  --bg: #1c130b;
+  --surface: #241a10;
+  --surface-2: #2e2013;
+  --border: #4a3722;
+  --text: #ece0c4;
+  --muted: #b39b7d;
+  --primary: #d9a25a;
+  --on-primary: #241608;
+  --primary-soft: rgba(217, 162, 90, 0.16);
+
+  --shelf-page-bg: #150d06;
+  --wood-frame-a: #3d2a15;
+  --wood-frame-b: #1f1409;
+  --wood-back-a: #2a1a0c;
+  --wood-back-b: #170e06;
+  --plank-a: #a67a42;
+  --plank-b: #6b4a26;
+  --plank-c: #2c1c0d;
+  --plank-edge: rgba(255, 214, 150, 0.75);
+  --shelf-glow: rgba(255, 196, 110, 0.3);
+  --shelf-text: #f0e4d2;
+}
+
+/* ===== Bordeaux velours ===== */
+[data-theme='wine'] {
+  --bg: #1a0c10;
+  --surface: #26121a;
+  --surface-2: #321824;
+  --border: #4a2a36;
+  --text: #f3e3e8;
+  --muted: #c79aab;
+  --primary: #e8a9b8;
+  --on-primary: #2a0e16;
+  --primary-soft: rgba(232, 169, 184, 0.15);
+
+  --shelf-page-bg: #140809;
+  --wood-frame-a: #5a2f2a;
+  --wood-frame-b: #2a1311;
+  --wood-back-a: #321514;
+  --wood-back-b: #190a0a;
+  --plank-a: #7a4a3a;
+  --plank-b: #4a2820;
+  --plank-c: #1a0d0a;
+  --plank-edge: rgba(232, 180, 160, 0.6);
+  --shelf-glow: rgba(232, 140, 160, 0.2);
+  --shelf-text: #f6e6ec;
+}
+
+/* ===== Émeraude joaillerie ===== */
+[data-theme='emerald'] {
+  --bg: #0c211a;
+  --surface: #103025;
+  --surface-2: #163b2e;
+  --border: #2a4d3e;
+  --text: #f1ead6;
+  --muted: #a9b8a3;
+  --primary: #e8cf94;
+  --on-primary: #1a2a1f;
+  --primary-soft: rgba(232, 207, 148, 0.15);
+
+  --shelf-page-bg: #081912;
+  --wood-frame-a: #5c3f1f;
+  --wood-frame-b: #2c1d0d;
+  --wood-back-a: #1a3025;
+  --wood-back-b: #0c1d15;
+  --plank-a: #866230;
+  --plank-b: #5e441f;
+  --plank-c: #241809;
+  --plank-edge: rgba(245, 222, 160, 0.7);
+  --shelf-glow: rgba(232, 207, 148, 0.2);
+  --shelf-text: #f4eddd;
+}

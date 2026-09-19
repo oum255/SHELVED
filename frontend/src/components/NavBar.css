@@ -1,0 +1,220 @@
+.navbar-verify-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary-soft);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  text-align: center;
+}
+
+.navbar-verify-btn {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--primary);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navbar-verify-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  color: var(--primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.2rem;
+  flex: 1;
+}
+
+.navbar-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: var(--fs-md);
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.navbar-link:hover {
+  color: var(--text);
+}
+
+.navbar-link.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.navbar-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 38px;
+  padding: 0 9px;
+  flex: 0 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.navbar-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Les barres forment une croix quand le menu est ouvert */
+.navbar-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Recouvre l'écran pour fermer le menu au clic extérieur */
+.navbar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}
+
+.navbar-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 1rem;
+  z-index: 21;
+  min-width: 220px;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-menu.open {
+  display: flex;
+}
+
+.navbar-menu-link {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  font-size: var(--fs-md);
+  padding: 0.55rem 0.6rem;
+  border-radius: 8px;
+}
+
+.navbar-menu-link:hover {
+  background: var(--surface-2);
+}
+
+.navbar-menu-link.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.navbar-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.4rem 0;
+}
+
+.navbar-switchers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.navbar-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navbar-field-label {
+  font-size: var(--fs-3xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.navbar-field .lang-switcher {
+  width: 100%;
+}
+
+.navbar-logout {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: var(--fs-base);
+  cursor: pointer;
+  width: 100%;
+}
+
+.navbar-logout:hover {
+  border-color: var(--primary);
+}
+
+.navbar-login {
+  display: block;
+  text-align: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Écran très étroit (~320-375px) : le padding/l'écart par défaut prennent trop de place. */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.7rem 1rem;
+    gap: 0.8rem;
+  }
+
+  .navbar-links {
+    gap: 0.6rem 0.9rem;
+  }
+}

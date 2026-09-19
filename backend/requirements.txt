@@ -1,0 +1,18 @@
+# Liste des librairies Python du backend SHELVED.
+# Une seule commande les installe toutes : pip install -r requirements.txt
+
+fastapi          # le framework qui crée notre API (le "cerveau")
+uvicorn[standard] # le serveur qui fait tourner FastAPI
+sqlalchemy       # l'ORM : décrit les tables en Python, parle à la base de données
+bcrypt           # crypte les mots de passe (hashing sécurisé)
+pydantic[email]  # validation des données reçues, dont les emails
+pyjwt            # crée et vérifie les jetons JWT (les "bracelets" de connexion)
+python-dotenv    # charge les secrets depuis le fichier .env
+httpx            # pour appeler des APIs externes (Google Books)
+cloudinary       # stockage des images (tranches/bordures des livres)
+python-multipart # permet de recevoir des fichiers (upload de photos)
+google-genai     # IA : recommandations + chat (Google Gemini, palier gratuit)
+resend           # envoi d'emails (vérification de compte, mot de passe oublié)
+
+# --- Tests automatisés (pas nécessaires pour faire tourner le site) ---
+pytest           # lance les tests (dossier backend/tests/)

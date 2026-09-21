@@ -9,7 +9,6 @@
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?logo=sqlalchemy&logoColor=white)
 ![JWT](https://img.shields.io/badge/Auth-JWT-black?logo=jsonwebtokens)
 ![Tests](https://img.shields.io/badge/tests-pytest%20%2B%20vitest-4B32C3)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 A full-stack reading tracker: shelve your books on a customizable visual
 bookshelf, track your reading progress, connect with other readers, and get
@@ -157,5 +156,3 @@ cd frontend && npm test     # UI tests (Vitest + Testing Library)
 ## Author
 
 Designed, built, and iterated on end-to-end by **Oumayma Haddour**.
-
-Distributed under the [MIT license](LICENSE).

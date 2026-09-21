@@ -9,7 +9,6 @@
 ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?logo=sqlalchemy&logoColor=white)
 ![JWT](https://img.shields.io/badge/Auth-JWT-black?logo=jsonwebtokens)
 ![Tests](https://img.shields.io/badge/tests-pytest%20%2B%20vitest-4B32C3)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 Application web full-stack de suivi de lecture : on range ses livres sur une
 étagère visuelle personnalisable, on suit sa progression, on échange avec
@@ -160,5 +159,3 @@ cd frontend && npm test     # tests interface (Vitest + Testing Library)
 ## Auteure
 
 Projet conçu, développé et itéré de bout en bout par **Oumayma Haddour**.
-
-Distribué sous licence [MIT](LICENSE).
